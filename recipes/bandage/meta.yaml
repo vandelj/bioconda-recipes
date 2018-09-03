@@ -1,0 +1,45 @@
+{% set name = "Bandage" %}
+{% set version = "0.8.1" %}
+{% set versionx = "0_8_1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  - url: https://github.com/rrwick/Bandage/releases/download/v{{ version }}/Bandage_Ubuntu_dynamic_v{{ versionx }}.zip
+    sha256: 352d5d7cd73672130e32f3f61c3f2ad95aa684d7aebf7668ab3f2594996c338b
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+  host:
+    - build-essential
+    - git
+    - qtbase5-dev
+    - libqt5svg5-dev
+  run:
+    - build-essential
+    - git
+    - qtbase5-dev
+    - libqt5svg5-dev
+
+test:
+  imports:
+    - bandage
+  commands:
+    - Bandage --help
+
+about:
+  home: https://github.com/rrwick/Bandage
+  license: GNU General Public License, version 3
+  license_family: GPL3
+  license_file: COPYING
+  summary: Bandage - a Bioinformatics Application for Navigating De novo Assembly Graphs Easily
+
+extra:
+  identifiers:
+    - doi: 10.1093/bioinformatics/btv383
