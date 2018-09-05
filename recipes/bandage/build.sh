@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Run qmake to generate a Makefile
 qmake
 

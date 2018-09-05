@@ -24,7 +24,6 @@ requirements:
 test:
   commands:
     - Bandage --help
-
 about:
   home: https://github.com/rrwick/Bandage
   license: GNU General Public License, version 3
